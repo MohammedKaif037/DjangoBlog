@@ -2,21 +2,38 @@ from django.shortcuts import render, get_object_or_404
 from django.core.paginator import Paginator
 from .models import Post, Category, Tag
 # Create your views here. 
+from django.db.models import Q
 
 def homepage(request):
-    featured_posts = Post.objects.filter(is_featured=True)
-    post_list = Post.objects.all()
-    paginator = Paginator(post_list, 5)  # Show 5 posts per page
-    page_number = request.GET.get('page')
-    posts = paginator.get_page(page_number)
+    searched_post = False  # Initialize with a default value
+    searchinput = ''  # Initialize with a default value
+    if request.method == 'POST':
+        searchinput = request.POST.get('searchinput')
+        posts = Post.objects.filter(
+            Q(title__icontains=searchinput) |
+            Q(summary__icontains=searchinput) |
+            Q(content__icontains=searchinput)
+        )
+        searched_post=True
+    else:
+        posts = Post.objects.all()
+        paginator = Paginator(posts, 5)
+        page_number = request.GET.get('page')
+        posts = paginator.get_page(page_number)
+
     categories = Category.objects.all()
     tags = Tag.objects.all()
+    featured_posts = Post.objects.filter(is_featured=True)
+
     return render(request, 'djangoapp/home.html', {
         'featured_posts': featured_posts,
         'posts': posts,
         'categories': categories,
-        'tags': tags
+        'tags': tags,
+        'searched_post': searched_post,
+        'searchinput': searchinput,
     })
+
 
 def post_detail(request, pk):
     post = get_object_or_404(Post, pk=pk)
