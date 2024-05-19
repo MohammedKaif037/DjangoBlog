@@ -1,6 +1,22 @@
 {% extends 'djangoapp/base.html' %}
 
 {% block content %}
+<div class="container mb-4">
+    <div class="row">
+        <div class="col-md-12">
+            <form method="POST" action="{% url 'home' %}">
+                {% csrf_token %}
+                <div class="input-group">
+                    <input type="text" class="form-control" name="searchinput" placeholder="Search...">
+                    <div class="input-group-append">
+                        <button class="btn btn-primary" type="submit">Search</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+{% if not searched_post %}
 <!-- Featured Posts Section -->
 <div class="container">
     <div class="row">
@@ -22,10 +38,11 @@
         {% endfor %}
     </div>
 </div>
-
+{% endif %}
 <!-- Blog Post Listings -->
 <div class="container mt-5">
     <div class="row">
+        {% if not searched_post %}
         <div class="col-md-8">
             <h2 class="text-white mb-4">Latest Posts</h2>
             {% for post in posts %}
@@ -36,6 +53,27 @@
                 <a href="{{ post.get_absolute_url }}" class="btn btn-primary">Read More</a>
             </div>
             {% endfor %}
+        {% endif %}
+        {% if searched_post %}
+        <div class="col-md-8">
+        <h2 class="text-white mb-4">Search Results for {{searchinput}} :</h2>
+        {% if posts %}
+        {% for post in posts %}
+        <div class="blog-post">
+        <h3>{{ post.title }}</h3>
+        <p class="text-secondary">{{ post.date_posted }}</p>
+        <p>{{ post.summary }}</p>
+        <a href="{{ post.get_absolute_url }}" class="btn btn-primary">Read More</a>
+        </div>
+        {% endfor %}
+        {% else %}
+        <div class="col-md-8">
+        <h2 class="text-white mb-4">No results found for "{{searchinput}}"</h2>
+        <p>Sorry, we couldn't find any posts matching your search query. Please try a different keyword or phrase.</p>
+        </div>
+        {% endif %}
+        {% endif %}
+
 
             <!-- Pagination -->
             <div class="row">
