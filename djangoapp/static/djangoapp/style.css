@@ -40,3 +40,8 @@
 code {
     color: #FFFFFF; /* Set text color of code tags to white */
 }
+
+pre {
+    color: rgb(2, 73, 2) !important;
+    font-weight: bold;
+}
