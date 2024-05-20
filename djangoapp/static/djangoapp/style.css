@@ -42,6 +42,10 @@ code {
 }
 
 pre {
-    color: rgb(2, 73, 2) !important;
-    font-weight: bold;
+    color: #00FF00 !important; /* Vivid green color */
+    font-weight: 900; /* Bold font weight */
+    background-color: #000000; /* Black background */
+    padding: 1rem; /* Add some padding */
+    border-radius: 0.25rem; /* Rounded corners */
+    box-shadow: 0 0 10px rgba(0, 255, 0, 0.5); /* Green glow effect */
 }
