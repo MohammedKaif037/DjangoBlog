@@ -3,6 +3,22 @@ from django.urls import reverse
 from django.utils import timezone
 from ckeditor.fields import RichTextField  # Assuming you are using CKEditor for rich text editing
 
+
+class Contact(models.Model):
+    name = models.CharField(max_length=100)
+    email = models.EmailField()
+    message = models.TextField()
+
+    def __str__(self):
+        return self.name
+
+class User(models.Model):
+    name = models.CharField(max_length=100)
+    email=models.EmailField()
+    password=models.CharField(max_length=100)
+    def __str__(self):
+        return self.name
+    
 class Category(models.Model):
     name = models.CharField(max_length=100)
 

@@ -8,7 +8,7 @@
                 <h1>{{ post.title }}</h1>
                 <p class="text-secondary">{{ post.date_posted }}</p>
                 <img src="{{ post.featured_image.url }}" alt="{{ post.title }}" class="img-fluid mb-4">
-                <div class="post-content">
+                <div class="rich-text-content">
                     {{ post.content|safe }}
                 </div>
                 {% for subheading in post.subheadings.all %}

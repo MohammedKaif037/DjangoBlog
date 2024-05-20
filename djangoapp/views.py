@@ -1,4 +1,5 @@
-from django.shortcuts import render, get_object_or_404
+from .forms import ContactForm, LoginForm, RegisterForm
+from django.shortcuts import redirect, render, get_object_or_404
 from django.core.paginator import Paginator
 from .models import Post, Category, Tag
 # Create your views here. 
@@ -48,3 +49,36 @@ def tag_detail(request, pk):
     tag = get_object_or_404(Tag, pk=pk)
     posts = Post.objects.filter(tags=tag)
     return render(request, 'djangoapp/tag_detail.html', {'tag': tag, 'posts': posts})
+
+def contact_view(request):
+    if request.method == 'POST':
+        form = ContactForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('home')
+    else:
+        form = ContactForm()
+    return render(request, 'djangoapp/contact.html', {'form': form})
+
+def login_view(request):
+    if request.method == 'POST':
+        form = LoginForm(request.POST)
+        if form.is_valid():
+            # Perform login logic here
+            return redirect('djangoapp/home')
+    else:
+        form = LoginForm()
+    return render(request, 'djangoapp/login.html', {'form': form})
+
+def register_view(request):
+    if request.method == 'POST':
+        form = RegisterForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('djangoapp/home')
+    else:
+        form = RegisterForm()
+    return render(request, 'djangoapp/register.html', {'form': form})
+
+def about_view(request):
+    return render(request, 'djangoapp/about.html')

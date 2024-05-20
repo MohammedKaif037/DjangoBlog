@@ -5,36 +5,31 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Django Blog</title>
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.1/styles      /default.min.css">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.1   /highlight.min.js"></script>
+    <script>hljs.highlightAll();</script>
     <!-- Bootstrap CSS -->
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <!-- Custom CSS -->
     <link rel="stylesheet" href="{% static 'djangoapp/style.css' %}">
     <style>
         body {
-            color: #fff;
-            background-color: #343a40; /* Bootstrap dark theme color for background */
+            color: #FFFFFF; /* Pure white text */
+            background-color: #092635; /* Background color */
         }
         .navbar, .footer {
-            background-color: #6f42c1; /* Purple color for navbar and footer */
+            background-color: #1B4242; /* Navbar and footer color */
         }
         .blog-post {
-            background-color: #4e4e4e; /* Slightly lighter shade for blog posts */
+            background-color: #5C8374; /* Blog post background color */
             margin-bottom: 1rem;
             padding: 1rem;
             border-radius: 0.25rem;
-        }
-        .pagination {
-            justify-content: center;
         }
         .featured-post {
-            background-color: #6f42c1; /* Purple color for featured posts */
+            background-color: #9EC8B9; /* Featured post background color */
             padding: 1rem;
             border-radius: 0.25rem;
-            margin-bottom: 1rem;
-        }
-        .featured-post img {
-            max-width: 100%;
-            height: auto;
             margin-bottom: 1rem;
         }
     </style>
@@ -54,13 +49,13 @@
                         <a class="nav-link" href="{% url 'home' %}">Home <span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">About</a>
+                        <a class="nav-link" href="{% url 'about' %}">About</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Contact</a>
+                        <a class="nav-link" href="{% url 'contact' %}">Contact</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Login</a>
+                        <a class="nav-link" href="{% url 'login' %}">Login</a>
                     </li>
                 </ul>
             </div>
@@ -91,8 +86,8 @@
                 <div class="col-md-6 text-md-right">
                     <nav>
                         <ul class="list-inline">
-                            <li class="list-inline-item"><a href="#">About</a></li>
-                            <li class="list-inline-item"><a href="#">Contact</a></li>
+                            <li class="list-inline-item"><a href="{% url 'about' %}">About</a></li>
+                            <li class="list-inline-item"><a href="{% url 'contact' %}">Contact</a></li>
                         </ul>
                     </nav>
                 </div>
