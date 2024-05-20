@@ -1,6 +1,7 @@
 .post-content p {
     font-size: 1.2rem;
     line-height: 1.6;
+    color: white;
 }
 
 .post-subheading h2 {
@@ -34,4 +35,8 @@
 
 .featured-post .btn {
     margin-top: auto;
+}
+
+code {
+    color: #FFFFFF; /* Set text color of code tags to white */
 }
