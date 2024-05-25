@@ -58,7 +58,7 @@ To install and run the project locally, follow these steps:
 
 4. Install the required dependencies:
     ```bash
-    pip install -r requirements.txt
+    pip install django
     ```
 
 5. Apply database migrations:
