@@ -1,11 +1,11 @@
 {% extends 'djangoapp/base.html' %}
 
 {% block content %}
-{% if username %}
+{% if is_authenticated %}
 <h2 style="color: green;text-align: center;">You are logged in as {{ username }}</h2>
 {% endif %}
-{% if message  %}
-<h2 style="color: green;text-align: center;"> {{message}}</h2>
+{% if message %}
+<h2 style="color: green;text-align: center;">{{ message }}</h2>
 {% endif %}
 
 <div class="container mb-4">
@@ -63,7 +63,7 @@
         {% endif %}
         {% if searched_post %}
         <div class="col-md-8">
-        <h2 class="text-white mb-4">Search Results for {{searchinput}} :</h2>
+        <h2 class="text-white mb-4">Search Results for {{ searchinput }} :</h2>
         {% if posts %}
         {% for post in posts %}
         <div class="blog-post">
@@ -75,12 +75,11 @@
         {% endfor %}
         {% else %}
         <div class="col-md-8">
-        <h2 class="text-white mb-4">No results found for "{{searchinput}}"</h2>
+        <h2 class="text-white mb-4">No results found for "{{ searchinput }}"</h2>
         <p>Sorry, we couldn't find any posts matching your search query. Please try a different keyword or phrase.</p>
         </div>
         {% endif %}
         {% endif %}
-
 
             <!-- Pagination -->
             <div class="row">
@@ -130,3 +129,4 @@
     </div>
 </div>
 {% endblock %}
+

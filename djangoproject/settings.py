@@ -122,7 +122,11 @@ MEDIA_ROOT=BASE_DIR/'uploads'
 MEDIA_URL='/media/'
 
 SESSION_ENGINE = 'django.contrib.sessions.backends.file'
-SESSION_FILE_PATH = '/tmp'
+SESSION_FILE_PATH = r'C:\Users\kaifm\Desktop\DjangoResume\emp'
+LOGIN_URL = 'login'  # or 'login/' if you prefer
+LOGIN_REDIRECT_URL = 'home'  # where to redirect after a successful login
+LOGOUT_REDIRECT_URL = 'home'  # where to redirect after a successful logout
+
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
