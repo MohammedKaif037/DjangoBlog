@@ -16,7 +16,7 @@ The project includes several Django apps and templates. The main app is `djangoa
 
 ## Authors
 
-- [Your Name](https://github.com/MohammedKaif037)
+- [Mohammed Kaif](https://github.com/MohammedKaif037)
 
 ## Badges
 
