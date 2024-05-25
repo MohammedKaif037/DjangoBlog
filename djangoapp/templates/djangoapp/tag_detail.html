@@ -9,7 +9,7 @@
                 <h2><a href="{% url 'post-detail' post.pk %}">{{ post.title }}</a></h2>
                 <p class="text-secondary">{{ post.date_posted }}</p>
                 <img src="{{ post.featured_image.url }}" class="img-fluid mb-4" alt="{{ post.title }}">
-                <p>{{ post.content|linebreaksbr|truncatewords:50 }}</p>
+                <p>{{ post.summary|linebreaksbr|truncatewords:50 }}</p>
                 <a href="{% url 'post-detail' post.pk %}" class="btn btn-primary">Read More</a>
             </div>
         {% endfor %}

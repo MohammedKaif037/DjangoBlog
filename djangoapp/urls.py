@@ -11,4 +11,7 @@ urlpatterns = [
     path('login/', views.login_view, name='login'),
     path('register/', views.register_view, name='register'),
     path('about/', views.about_view, name='about'),
+    path('contact/savecontactdata',views.save_contactdata, name='save_contactdata'),
+    path('register/verifycredentials', views.verify_credentials, name='verifycredentials'),
+        path('register/register', views.register_view, name='register_register'),  # Add this line
 ]

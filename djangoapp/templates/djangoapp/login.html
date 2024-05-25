@@ -1,12 +1,19 @@
 {% extends 'djangoapp/base.html' %}
 
 {% block content %}
+{% if message  %}
+<h2 style="color: green;text-align: center;">{{message}}</h2>
+{% endif %}
 <div class="container">
     <h1 class="mt-5">Login</h1>
     <form method="post">
         {% csrf_token %}
         {{ form.as_p }}
         <button type="submit" class="btn btn-primary">Login</button>
+       
     </form>
+    <div class="text-right mt-3">
+        <a href="{% url 'register' %}">Click Here To Register</a>
+    </div>
 </div>
 {% endblock %}

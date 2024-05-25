@@ -13,7 +13,7 @@ class Contact(models.Model):
         return self.name
 
 class User(models.Model):
-    name = models.CharField(max_length=100)
+    username = models.CharField(max_length=100)
     email=models.EmailField()
     password=models.CharField(max_length=100)
     def __str__(self):
@@ -24,12 +24,17 @@ class Category(models.Model):
 
     def __str__(self):
         return self.name
+    def get_absolute_url(self):
+        return reverse("category-detail", kwargs={"pk": self.pk})
 
 class Tag(models.Model):
     name = models.CharField(max_length=100)
 
     def __str__(self):
         return self.name
+    def get_absolute_url(self):
+        return reverse("tag-detail", kwargs={"pk": self.pk})
+    
 
 class Post(models.Model):
     title = models.CharField(max_length=200)

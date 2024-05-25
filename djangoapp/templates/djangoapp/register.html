@@ -3,10 +3,13 @@
 {% block content %}
 <div class="container">
     <h1 class="mt-5">Register</h1>
-    <form method="post">
+    <form method="post" action="register">
         {% csrf_token %}
         {{ form.as_p }}
         <button type="submit" class="btn btn-primary">Register</button>
     </form>
+    <div class="text-right mt-3">
+        <a href="{% url 'login' %}">Click Here To Login</a>
+    </div>
 </div>
 {% endblock %}
