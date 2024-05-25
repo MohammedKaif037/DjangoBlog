@@ -1,3 +1,9 @@
+## Badges
+[![HTML](https://img.shields.io/badge/HTML-5-red)](https://developer.mozilla.org/en-US/docs/Web/HTML)
+[![CSS](https://img.shields.io/badge/CSS-3-blue)](https://developer.mozilla.org/en-US/docs/Web/CSS)
+[![Bootstrap](https://img.shields.io/badge/Bootstrap-4-purple)](https://getbootstrap.com/docs/4.0/getting-started/introduction/)
+[![Django](https://img.shields.io/badge/Django-3.0-green)](https://docs.djangoproject.com/en/3.0/)
+[![SQLite](https://img.shields.io/badge/SQLite-3-blue)](https://www.sqlite.org/docs.html)
 # Django Blog App
 
 This is a Django-based blog application that allows users to create, read, update, and delete blog posts. It also includes features such as categorization, tagging, user authentication, and contact form submission.
