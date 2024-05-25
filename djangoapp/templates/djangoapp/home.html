@@ -1,8 +1,8 @@
 {% extends 'djangoapp/base.html' %}
 
 {% block content %}
-{% if logged_in_name  %}
-<h2 style="color: green;text-align: center;">You are logged in as {{logged_in_name}}</h2>
+{% if username %}
+<h2 style="color: green;text-align: center;">You are logged in as {{ username }}</h2>
 {% endif %}
 {% if message  %}
 <h2 style="color: green;text-align: center;"> {{message}}</h2>
