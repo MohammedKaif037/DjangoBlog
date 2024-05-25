@@ -9,6 +9,9 @@
         {% csrf_token %}
         {{ form.as_p }}
         <button type="submit" class="btn btn-primary">Login</button>
+        {% if error %}
+    <p style="color: red;">{{ error }}</p>
+    {% endif %}
     </form>
     <div class="text-right mt-3">
         <a href="{% url 'register' %}">Click Here To Register</a>
