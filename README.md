@@ -34,8 +34,8 @@ The project uses the following color palette:
 
 | Color             | Hex                                                        |
 | ----------------- | ---------------------------------------------------------- |
-| Primary Color     | ![#000000](https://via.placeholder.com/10/000000?text=+) `#000000` |
-| Secondary Color   | ![#FFFFFF](https://via.placeholder.com/10/FFFFFF?text=+) `#FFFFFF` |
+| Primary Color     | ![#006769](https://via.placeholder.com/10/000000?text=+) `#006769` |
+| Secondary Color   | ![#40A578](https://via.placeholder.com/10/FFFFFF?text=+) `#40A578` |
 | Accent Color      | ![#00FF00](https://via.placeholder.com/10/00FF00?text=+) `#00FF00` |
 
 ## Contributing
