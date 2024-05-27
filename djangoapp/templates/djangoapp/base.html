@@ -5,38 +5,44 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Django Blog</title>
-    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.1/styles      /default.min.css">
-    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.1   /highlight.min.js"></script>
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.1/styles/default.min.css">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.1/highlight.min.js"></script>
     <script>hljs.highlightAll();</script>
     <!-- Bootstrap CSS -->
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <!-- Custom CSS -->
     <link rel="stylesheet" href="{% static 'djangoapp/style.css' %}">
     <style>
+        code {
+        color: #00a545; /* Set text color of code tags to white */
+        }
         body {
-            color: #FFFFFF; /* Pure white text */
-            background-color: #092635; /* Background color */
+            color: #121212; /* Almost-black text */
+            background-color: #FFFFFF; /* Pure white background */
         }
         .navbar, .footer {
-            background-color: #1B4242; /* Navbar and footer color */
+            background-color: #FF6347; /* Tomato red for navbar and footer */
         }
-        .blog-post {
-            background-color: #5C8374; /* Blog post background color */
-            margin-bottom: 1rem;
-            padding: 1rem;
-            border-radius: 0.25rem;
+        .navbar-brand, .nav-link, .footer .text-muted, .footer .list-inline-item a {
+            color: #FFFFFF; /* White text for navbar and footer links */
+        }
+        .header h1, .header p, .btn-primary {
+            color: #FF6347; /* Tomato red for headers and buttons */
         }
         .featured-post {
-            background-color: #9EC8B9; /* Featured post background color */
-            padding: 1rem;
-            border-radius: 0.25rem;
-            margin-bottom: 1rem;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            border: 1px solid #FF6347; /* Thin orange border */
+            padding: 10px; /* Add padding inside the border */
+            border-radius: 5px; /* Rounded corners for better aesthetics */
+            margin-bottom: 20px; /* Space between featured posts */
         }
     </style>
 </head>
 <body>
     <!-- Navigation Bar -->
-    <nav class="navbar navbar-expand-lg navbar-dark">
+    <nav class="navbar navbar-expand-lg">
         <div class="container">
             <a class="navbar-brand" href="{% url 'home' %}">My Blog</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
@@ -55,29 +61,29 @@
                         <a class="nav-link" href="{% url 'contact' %}">Contact</a>
                     </li>
                     {% if user.is_authenticated %}
-                <li class="nav-item">
-                    <a class="nav-link" href="{% url 'logout' %}">Logout</a>
-                </li>
-                {% else %}
-                <li class="nav-item">
-                    <a class="nav-link" href="{% url 'login' %}">Login</a>
-                </li>
-                {% endif %}
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'logout' %}">Logout</a>
+                    </li>
+                    {% else %}
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'login' %}">Login</a>
+                    </li>
+                    {% endif %}
                 </ul>
             </div>
         </div>
     </nav>
-     <!-- Header Section -->
-   <header class="py-5 mb-5">
-    <div class="container h-100">
-        <div class="row h-100 align-items-center">
-            <div class="col-lg-12">
-                <h1 class="display-4 text-white mt-5 mb-2">Welcome to My Django Blog</h1>
-                <p class="lead mb-5 text-white-50">Insights, stories and ideas from the world of tech.</p>
+    <!-- Header Section -->
+    <header class="header py-5 mb-5">
+        <div class="container h-100">
+            <div class="row h-100 align-items-center">
+                <div class="col-lg-12">
+                    <h1 class="display-4 mt-5 mb-2">Welcome to My Django Blog</h1>
+                    <p class="lead mb-5">Insights, stories and ideas from the world of tech.</p>
+                </div>
             </div>
         </div>
-    </div>
-</header>
+    </header>
 
     {% block content %}
     {% endblock %}

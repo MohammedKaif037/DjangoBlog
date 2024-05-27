@@ -2,10 +2,10 @@
 
 {% block content %}
 {% if is_authenticated %}
-<h2 style="color: green;text-align: center;">You are logged in as {{ username }}</h2>
+<h2 style="color: #121212; text-align: center;">You are logged in as {{ username }}</h2>
 {% endif %}
 {% if message %}
-<h2 style="color: green;text-align: center;">{{ message }}</h2>
+<h2 style="color: #121212; text-align: center;">{{ message }}</h2>
 {% endif %}
 
 <div class="container mb-4">
@@ -16,7 +16,7 @@
                 <div class="input-group">
                     <input type="text" class="form-control" name="searchinput" placeholder="Search...">
                     <div class="input-group-append">
-                        <button class="btn btn-primary" type="submit">Search</button>
+                        <button class="btn" type="submit" style="background-color: #FF6347; border-color: #FF6347;">Search</button>
                     </div>
                 </div>
             </form>
@@ -28,7 +28,7 @@
 <div class="container">
     <div class="row">
         <div class="col-md-12">
-            <h2 class="text-white mb-4">Featured Posts</h2>
+            <h2 class="mb-4" style="color: #FF6347;">Featured Posts</h2>
         </div>
     </div>
     <div class="row">
@@ -36,10 +36,10 @@
         <div class="col-md-4">
             <div class="featured-post">
                 <img src="{{ featured_post.featured_image.url }}" alt="{{ featured_post.title }}">
-                <h3>{{ featured_post.title }}</h3>
-                <p class="text-secondary">{{ featured_post.date_posted }}</p>
-                <p>{{ featured_post.summary }}</p>
-                <a href="{{ featured_post.get_absolute_url }}" class="btn btn-primary">Read More</a>
+                <h3 style="color: #121212;">{{ featured_post.title }}</h3>
+                <p class="text-secondary" style="color: #FF6347;">{{ featured_post.date_posted }}</p>
+                <p style="color: #121212;">{{ featured_post.summary }}</p>
+                <a href="{{ featured_post.get_absolute_url }}" class="btn" style="background-color: #FF6347; border-color: #FF6347;">Read More</a>
             </div>
         </div>
         {% endfor %}
@@ -51,32 +51,32 @@
     <div class="row">
         {% if not searched_post %}
         <div class="col-md-8">
-            <h2 class="text-white mb-4">Latest Posts</h2>
+            <h2 class="mb-4" style="color: #FF6347;">Latest Posts</h2>
             {% for post in posts %}
             <div class="blog-post">
-                <h3>{{ post.title }}</h3>
-                <p class="text-secondary">{{ post.date_posted }}</p>
-                <p>{{ post.summary }}</p>
-                <a href="{{ post.get_absolute_url }}" class="btn btn-primary">Read More</a>
+                <h3 style="color: #121212;">{{ post.title }}</h3>
+                <p class="text-secondary" style="color: #FF6347;">{{ post.date_posted }}</p>
+                <p style="color: #121212;">{{ post.summary }}</p>
+                <a href="{{ post.get_absolute_url }}" class="btn" style="background-color: #FF6347; border-color: #FF6347;">Read More</a>
             </div>
             {% endfor %}
         {% endif %}
         {% if searched_post %}
         <div class="col-md-8">
-        <h2 class="text-white mb-4">Search Results for {{ searchinput }} :</h2>
+        <h2 class="mb-4" style="color: #FF6347;">Search Results for {{ searchinput }} :</h2>
         {% if posts %}
         {% for post in posts %}
         <div class="blog-post">
-        <h3>{{ post.title }}</h3>
-        <p class="text-secondary">{{ post.date_posted }}</p>
-        <p>{{ post.summary }}</p>
-        <a href="{{ post.get_absolute_url }}" class="btn btn-primary">Read More</a>
+        <h3 style="color: #121212;">{{ post.title }}</h3>
+        <p class="text-secondary" style="color: #FF6347;">{{ post.date_posted }}</p>
+        <p style="color: #121212;">{{ post.summary }}</p>
+        <a href="{{ post.get_absolute_url }}" class="btn" style="background-color: #FF6347; border-color: #FF6347;">Read More</a>
         </div>
         {% endfor %}
         {% else %}
         <div class="col-md-8">
-        <h2 class="text-white mb-4">No results found for "{{ searchinput }}"</h2>
-        <p>Sorry, we couldn't find any posts matching your search query. Please try a different keyword or phrase.</p>
+        <h2 class="mb-4" style="color: #FF6347;">No results found for "{{ searchinput }}"</h2>
+        <p style="color: #121212;">Sorry, we couldn't find any posts matching your search query. Please try a different keyword or phrase.</p>
         </div>
         {% endif %}
         {% endif %}
@@ -87,13 +87,13 @@
                     <nav aria-label="Page navigation example">
                         <ul class="pagination">
                             {% if posts.has_previous %}
-                            <li class="page-item"><a class="page-link" href="?page={{ posts.previous_page_number }}">Previous</a></li>
+                            <li class="page-item"><a class="page-link" href="?page={{ posts.previous_page_number }}" style="color: #121212;">Previous</a></li>
                             {% endif %}
                             {% for num in posts.paginator.page_range %}
-                            <li class="page-item {% if posts.number == num %}active{% endif %}"><a class="page-link" href="?page={{ num }}">{{ num }}</a></li>
+                            <li class="page-item {% if posts.number == num %}active{% endif %}"><a class="page-link" href="?page={{ num }}" style="color: #121212;">{{ num }}</a></li>
                             {% endfor %}
                             {% if posts.has_next %}
-                            <li class="page-item"><a class="page-link" href="?page={{ posts.next_page_number }}">Next</a></li>
+                            <li class="page-item"><a class="page-link" href="?page={{ posts.next_page_number }}" style="color: #121212;">Next</a></li>
                             {% endif %}
                         </ul>
                     </nav>
@@ -102,26 +102,26 @@
         </div>
         <div class="col-md-4">
             <div class="sidebar">
-                <h3 class="text-white mb-3">Categories</h3>
+                <h3 class="mb-3" style="color: #FF6347;">Categories</h3>
                 <ul class="list-unstyled">
                     {% for category in categories %}
-                    <li><a href="{{ category.get_absolute_url }}">{{ category.name }}</a></li>
+                    <li><a href="{{ category.get_absolute_url }}" style="color: #121212;">{{ category.name }}</a></li>
                     {% endfor %}
                 </ul>
 
-                <h3 class="text-white mb-3 mt-4">Tags</h3>
+                <h3 class="mb-3 mt-4" style="color: #FF6347;">Tags</h3>
                 <div class="tags">
                     {% for tag in tags %}
-                    <a href="{{ tag.get_absolute_url }}" class="badge badge-primary">{{ tag.name }}</a>
+                    <a href="{{ tag.get_absolute_url }}" class="badge" style="background-color: #121212; color: #FFFFFF;">{{ tag.name }}</a>
                     {% endfor %}
                 </div>
 
                 <div class="mt-4">
-                    <h3 class="text-white mb-3">Share on Social Media</h3>
+                    <h3 class="mb-3" style="color: #FF6347;">Share on Social Media</h3>
                     <ul class="list-inline">
-                        <li class="list-inline-item"><a href="#"><i class="fab fa-facebook fa-2x"></i></a></li>
-                        <li class="list-inline-item"><a href="#"><i class="fab fa-twitter fa-2x"></i></a></li>
-                        <li class="list-inline-item"><a href="#"><i class="fab fa-linkedin fa-2x"></i></a></li>
+                        <li class="list-inline-item"><a href="#" style="color: #121212;"><i class="fab fa-facebook fa-2x"></i></a></li>
+                        <li class="list-inline-item"><a href="#" style="color: #121212;"><i class="fab fa-twitter fa-2x"></i></a></li>
+                        <li class="list-inline-item"><a href="#" style="color: #121212;"><i class="fab fa-linkedin fa-2x"></i></a></li>
                     </ul>
                 </div>
             </div>
@@ -129,4 +129,3 @@
     </div>
 </div>
 {% endblock %}
-
