@@ -31,26 +31,49 @@
         </div>
         <div class="col-md-4">
             <div class="sidebar">
-                <h3 class="">Categories</h3>
+                <h3 class=""style="color: #ff6200;">Categories</h3>
                 <ul class="list-unstyled">
                     {% for category in categories %}
                     <li><a href="{{ category.get_absolute_url }}" style="color: #121212;">{{ category.name }}</a></li>
                     {% endfor %}
                 </ul>
-                <h3 class="">Tags</h3>
+                <h3 class="" style="color: #ff6200;">Tags</h3>
                 <div class="tags">
                     {% for tag in tags %}
                     <a href="{{ tag.get_absolute_url }}" class="badge" style="background-color: #121212; color: #FFFFFF;">{{ tag.name }}</a>
                     {% endfor %}
                 </div>
                 <div class="mt-4">
-                    <h3 class="">Share on Social Media</h3>
+                    <h3 class="mb-3" style="color: #ff6200;">Share on Social Media</h3>
                     <ul class="list-inline">
-                        <li class="list-inline-item"><a href="#"><i class="fab fa-facebook fa-2x"></i></a></li>
-                        <li class="list-inline-item"><a href="#"><i class="fab fa-twitter fa-2x"></i></a></li>
-                        <li class="list-inline-item"><a href="#"><i class="fab fa-linkedin fa-2x"></i></a></li>
+                        <li class="list-inline-item">
+                            <a href="#" style="color: #121212;">
+                                <i class="fab fa-facebook fa-2x"></i>
+                            </a>
+                        </li>
+                        <li class="list-inline-item">
+                            <a href="#" style="color: #121212;">
+                                <i class="fab fa-twitter fa-2x"></i>
+                            </a>
+                        </li>
+                        <li class="list-inline-item">
+                            <a href="#" style="color: #121212;">
+                                <i class="fab fa-linkedin fa-2x"></i>
+                            </a>
+                        </li>
+                        <li class="list-inline-item">
+                            <a href="#" style="color: #121212;">
+                                <i class="fab fa-github fa-2x"></i>
+                            </a>
+                        </li>
+                        <li class="list-inline-item">
+                            <a href="#" style="color: #121212;">
+                                <i class="fab fa-reddit fa-2x"></i>
+                            </a>
+                        </li>
                     </ul>
                 </div>
+                
             </div>
         </div>
     </div>

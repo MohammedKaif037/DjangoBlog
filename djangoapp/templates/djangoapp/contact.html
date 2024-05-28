@@ -6,7 +6,7 @@
     <form method="post"  action="savecontactdata">
         {% csrf_token %}
         {{ form.as_p }}
-        <button type="submit" class="btn btn-primary">Submit</button>
+        <button type="submit" class="btn" style="border: black solid 1px;">Submit</button>
     </form>
 </div>
 {% endblock %}

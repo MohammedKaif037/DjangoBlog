@@ -38,7 +38,14 @@
             border-radius: 5px; /* Rounded corners for better aesthetics */
             margin-bottom: 20px; /* Space between featured posts */
         }
+        
+        .navbar-toggler-icon {
+    background-image: url('data:image/svg+xml;charset=UTF8,%3Csvg viewBox="0 0 30 30" xmlns="http://www.w3.org/2000/svg"%3E%3Cpath stroke="rgba%28255, 255, 255, 1%29" stroke-width="2" stroke-linecap="round" stroke-miterlimit="10" d="M4 7h22M4 15h22M4 23h22"/%3E%3C/svg%3E');
+}
     </style>
+    <!-- FontAwesome CDN -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
 </head>
 <body>
     <!-- Navigation Bar -->
@@ -47,7 +54,7 @@
             <a class="navbar-brand" href="{% url 'home' %}">My Blog</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
                     aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
+                <span class="navbar-toggler-icon" ></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ml-auto">
@@ -93,7 +100,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-6">
-                    <span class="text-muted">&copy; My Django Blog 2023</span>
+                    <span class="text-white">&copy; My Django Blog 2023</span>
                 </div>
                 <div class="col-md-6 text-md-right">
                     <nav>
@@ -112,6 +119,6 @@
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.9.3/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <!-- FontAwesome for social media icons -->
-    <script src="https://kit.fontawesome.com/your-font-awesome-kit.js"></script>
+    <!-- <script src="https://kit.fontawesome.com/your-font-awesome-kit.js"></script> -->
 </body>
 </html>
