@@ -105,6 +105,22 @@ A: The project uses Bootstrap for styling. You can modify the CSS files in the `
 ## Feedback
 
 If you have any feedback or suggestions for improvement, please open an issue on the project's GitHub repository.
+## Screenshots
+
+### Screenshot 1 - HOME
+![Screenshot 1](https://github.com/MohammedKaif037/DjangoBlog/blob/main/Screenshots/bloghome.png)
+
+### Screenshot 2 - BlogPost
+![Screenshot 2](https://github.com/MohammedKaif037/DjangoBlog/blob/main/Screenshots/blogpost.png)
+
+### Screenshot 3 - Category
+![Screenshot 3](https://github.com/MohammedKaif037/DjangoBlog/blob/main/Screenshots/category.png)
+
+### Screenshot 4 - Tag
+![Screenshot 4](https://github.com/MohammedKaif037/DjangoBlog/blob/main/Screenshots/tag.png)
+
+### Screenshot 5 - Contact
+![Screenshot 5](https://github.com/MohammedKaif037/DjangoBlog/blob/main/Screenshots/contactblog.png)
 
 ## Style Guide
 
