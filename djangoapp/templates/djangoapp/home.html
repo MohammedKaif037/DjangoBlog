@@ -2,7 +2,10 @@
 
 {% block content %}
 {% if is_authenticated %}
-<h2 style="color: #121212; text-align: center;">You are logged in as {{ username }}</h2>
+<div style="text-align: center;">
+    <h2 style="color: #eb0d0d; display: inline-block;">You are logged in as </h2>
+    <h2 style="color: #000000; display: inline-block;"> &nbsp;{{ username }}</h2>
+</div>
 {% endif %}
 {% if message %}
 <h2 style="color: #121212; text-align: center;">{{ message }}</h2>
@@ -90,7 +93,7 @@
                             <li class="page-item"><a class="page-link" href="?page={{ posts.previous_page_number }}" style="color: #121212;">Previous</a></li>
                             {% endif %}
                             {% for num in posts.paginator.page_range %}
-                            <li class="page-item {% if posts.number == num %}active{% endif %}"><a class="page-link" href="?page={{ num }}" style="color: #121212;">{{ num }}</a></li>
+                            <li class="page-item {% if posts.number == num %}active{% endif %}"><a class="page-link" href="?page={{ num }}" style="color: #121212; ">{{ num }}</a></li>
                             {% endfor %}
                             {% if posts.has_next %}
                             <li class="page-item"><a class="page-link" href="?page={{ posts.next_page_number }}" style="color: #121212;">Next</a></li>
@@ -119,11 +122,35 @@
                 <div class="mt-4">
                     <h3 class="mb-3" style="color: #FF6347;">Share on Social Media</h3>
                     <ul class="list-inline">
-                        <li class="list-inline-item"><a href="#" style="color: #121212;"><i class="fab fa-facebook fa-2x"></i></a></li>
-                        <li class="list-inline-item"><a href="#" style="color: #121212;"><i class="fab fa-twitter fa-2x"></i></a></li>
-                        <li class="list-inline-item"><a href="#" style="color: #121212;"><i class="fab fa-linkedin fa-2x"></i></a></li>
+                        <li class="list-inline-item">
+                            <a href="#" style="color: #121212;">
+                                <i class="fab fa-facebook fa-2x"></i>
+                            </a>
+                        </li>
+                        <li class="list-inline-item">
+                            <a href="#" style="color: #121212;">
+                                <i class="fab fa-twitter fa-2x"></i>
+                            </a>
+                        </li>
+                        <li class="list-inline-item">
+                            <a href="#" style="color: #121212;">
+                                <i class="fab fa-linkedin fa-2x"></i>
+                            </a>
+                        </li>
+                        <li class="list-inline-item">
+                            <a href="#" style="color: #121212;">
+                                <i class="fab fa-github fa-2x"></i>
+                            </a>
+                        </li>
+                        <li class="list-inline-item">
+                            <a href="#" style="color: #121212;">
+                                <i class="fab fa-reddit fa-2x"></i>
+                            </a>
+                        </li>
                     </ul>
                 </div>
+                
+                
             </div>
         </div>
     </div>
