@@ -30,3 +30,18 @@ class RegisterForm(forms.ModelForm):
             'password': forms.PasswordInput(attrs={'class': 'form-control'}),
             'email': forms.EmailInput(attrs={'class': 'form-control'}),
         }
+from .models import Post
+
+class PostForm(forms.ModelForm):
+    class Meta:
+        model = Post
+        fields = ['title', 'summary', 'content', 'category', 'tags', 'featured_image', 'is_featured']
+        widgets = {
+            'title': forms.TextInput(attrs={'class': 'form-control'}),
+            'summary': forms.Textarea(attrs={'class': 'form-control'}),
+            'content': forms.CharField(widget=forms.Textarea(attrs={'class': 'form-control'})),
+            'category': forms.Select(attrs={'class': 'form-control'}),
+            'tags': forms.CheckboxSelectMultiple(),
+            'featured_image': forms.FileInput(attrs={'class': 'form-control'}),
+            'is_featured': forms.CheckboxInput(),
+        }

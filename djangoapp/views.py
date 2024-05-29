@@ -131,3 +131,19 @@ def login_view(request):
             else:
                 return render(request, 'djangoapp/login.html', {'form': form, 'error': 'Invalid credentials'})
     return render(request, 'djangoapp/login.html', {'form': form})
+
+from .forms import PostForm
+
+@login_required
+def create_post(request):
+    if request.method == 'POST':
+        form = PostForm(request.POST, request.FILES)
+        if form.is_valid():
+            post = form.save(commit=False)
+            post.author = request.user
+            post.save()
+            form.save_m2m()  # Save the many-to-many fields (tags)
+            return redirect('post-detail', pk=post.pk)
+    else:
+        form = PostForm()
+    return render(request, 'djangoapp/create_post.html', {'form': form})
