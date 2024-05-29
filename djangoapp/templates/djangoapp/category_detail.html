@@ -6,11 +6,10 @@
     {% if posts %}
         {% for post in posts %}
             <div class="blog-post">
-                <h2><a href="{% url 'post-detail' post.pk %}">{{ post.title }}</a></h2>
+                <h2><a  style="color: orangered;" href="{% url 'post-detail' post.pk %}">{{ post.title }}</a></h2>
                 <p class="text-secondary">{{ post.date_posted }}</p>
-                <img src="{{ post.featured_image.url }}" class="img-fluid mb-4" alt="{{ post.title }}">
-                <p>{{ post.summary|linebreaksbr|truncatewords:50 }}</p>
-                <a href="{% url 'post-detail' post.pk %}" class="btn btn-primary">Read More</a>
+                <img src="{{ post.featured_image.url }}" class="img-fluid mb-4" alt="{{ post.title }}" style="max-width: 50%; height: auto;">                <p>{{ post.summary|linebreaksbr|truncatewords:50 }}</p>
+                <a href="{% url 'post-detail' post.pk %}" class="btn" style="border:black solid 1px;">Read More</a>
             </div>
         {% endfor %}
     {% else %}
