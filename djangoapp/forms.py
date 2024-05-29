@@ -1,6 +1,7 @@
 from django import forms
 from .models import Contact
 from .models import User
+from ckeditor.widgets import CKEditorWidget
 
 class ContactForm(forms.ModelForm):
     class Meta:
@@ -39,7 +40,7 @@ class PostForm(forms.ModelForm):
         widgets = {
             'title': forms.TextInput(attrs={'class': 'form-control'}),
             'summary': forms.Textarea(attrs={'class': 'form-control'}),
-            'content': forms.CharField(widget=forms.Textarea(attrs={'class': 'form-control'})),
+            'content': CKEditorWidget(attrs={'class': 'form-control'}),
             'category': forms.Select(attrs={'class': 'form-control'}),
             'tags': forms.CheckboxSelectMultiple(),
             'featured_image': forms.FileInput(attrs={'class': 'form-control'}),
