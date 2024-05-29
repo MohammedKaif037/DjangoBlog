@@ -1,0 +1,23 @@
+{% extends 'djangoapp/base.html' %}
+
+<style>
+    .create-post-link {
+    display: inline-block;
+    position: relative;
+    padding-right: 10px; /* Adjust based on your needs */
+}
+
+.icon {
+    font-size: 16px; /* Adjust size as needed */
+    margin-left: -5px; /* Adjust positioning */
+}
+
+</style>
+{% block content %}
+  <h1>Create Post</h1>
+  <form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button  style="border: black solid 1px ;"submit" class="btn">Save</button>
+  </form>
+{% endblock %}
