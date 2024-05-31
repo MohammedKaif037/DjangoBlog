@@ -111,7 +111,7 @@ If you have any feedback or suggestions for improvement, please open an issue on
 ![Screenshot 1](https://github.com/MohammedKaif037/DjangoBlog/blob/main/Screenshots/bloghome.png)
 
 ### Screenshot 2 - BlogPost
-![Screenshot 2](https://github.com/MohammedKaif037/DjangoBlog/blob/main/Screenshots/blogpost.png)
+![Screenshot 2](https://github.com/MohammedKaif037/DjangoBlog/blob/main/Screenshots/Togit.png)
 
 ### Screenshot 3 - Category
 ![Screenshot 3](https://github.com/MohammedKaif037/DjangoBlog/blob/main/Screenshots/category.png)
