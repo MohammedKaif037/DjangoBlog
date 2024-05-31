@@ -8,8 +8,12 @@
                 <h1>{{ post.title }}</h1>
                 <p class="text-secondary">{{ post.date_posted }}</p>
                 <img src="{{ post.featured_image.url }}" alt="{{ post.title }}" class="img-fluid mb-4">
-                <h2 style="color: #121212;">{{ post.summary|linebreaksbr|truncatewords:50 }}</h2>
-                <br>
+                <div class="post-summary">
+                    <p>
+                         {{post.summary}}
+                    </p>
+                </div>
+                                <br>
                 <div class="rich-text-content">
                     {{ post.content|safe }}
                 </div>
