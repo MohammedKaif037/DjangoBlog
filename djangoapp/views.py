@@ -85,7 +85,7 @@ def save_contactdata(request):
         if form.is_valid():
             form.save()
             message = f'Thank you for contacting us, {request.POST.get("name")}'
-            return redirect('home', {'message': message})
+            return redirect('home')
     else:
         form = ContactForm()
     return render(request, 'djangoapp/contact.html', {'form': form})

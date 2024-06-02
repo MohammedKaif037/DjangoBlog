@@ -8,7 +8,7 @@
 }
 
 .create-post-link {
-    color: #FF6347;
+    color: #ff5050;
     font-size: 1.5em;
     text-decoration: none;
     position: relative;
@@ -17,7 +17,7 @@
 }
 
 .create-post-link .icon {
-    background-color: #FF6347;
+    background-color: #ff5050;
     color: white;
     border-radius: 50%;
     width: 40px;
@@ -28,11 +28,12 @@
     margin-right: 10px;
     transition: transform 0.3s, background-color 0.3s;
     position: relative;
+    text-decoration: none;
 }
 
 .create-post-link:hover .icon {
     transform: rotate(90deg);
-    background-color: #d9534f;
+    background-color:  #d9534f; text-decoration: none;
 }
 
 .create-post-link .icon::after {
@@ -42,20 +43,32 @@
     transform: translateX(-50%);
     white-space: nowrap;
     background: rgba(0, 0, 0, 0.8);
-    color: #fff;
+    color: #f67272;
     padding: 5px 10px;
     border-radius: 5px;
     opacity: 0;
     transition: opacity 0.3s;
     pointer-events: none;
     margin-bottom: 10px;
+    text-decoration: none;
 }
 
 .create-post-link:hover .icon::after {
     opacity: 1;
 }
+a:hover{
+    color: #f17676;
+ }
+.btn:hover{
+    background-color: #f17676;
+    color: #ffffff;
+    text-decoration: wavy;
 
+}
+#create-post:hover{
+    background-color:none;
 
+}
 
 
 </style>
@@ -67,7 +80,7 @@
 {% endif %}
 {% if user.is_authenticated %}
 <div class="create-post-container">
-    <a href="{% url 'create-post' %}" class="create-post-link">
+    <a  href="{% url 'create-post' %}" class="create-post-link">
         <span class="icon">+</span> Create Post
     </a>
 </div>
