@@ -122,6 +122,13 @@ If you have any feedback or suggestions for improvement, please open an issue on
 ### Screenshot 5 - Contact
 ![Screenshot 5](https://github.com/MohammedKaif037/DjangoBlog/blob/main/Screenshots/contactblog.png)
 
+### Screenshot 6 - Updated HomePage
+![Screenshot 5](https://github.com/MohammedKaif037/DjangoBlog/blob/main/Screenshots/bh.png)
+
+### Screenshot 6 - Create Post
+![Screenshot 5](https://github.com/MohammedKaif037/DjangoBlog/blob/main/Screenshots/bh2.png)
+
+
 ## Style Guide
 
 The project follows the [PEP 8 Style Guide](https://www.python.org/dev/peps/pep-0008/) for Python code and the [Bootstrap documentation](https://getbootstrap.com/docs/5.0/getting-started/introduction/) for HTML/CSS/JS.
