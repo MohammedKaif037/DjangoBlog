@@ -34,9 +34,9 @@ The project uses the following color palette:
 
 | Color             | Hex                                                        |
 | ----------------- | ---------------------------------------------------------- |
-| Primary Color     | ![#006769](https://via.placeholder.com/10/000000?text=+) `#006769` |
-| Secondary Color   | ![#40A578](https://via.placeholder.com/10/FFFFFF?text=+) `#40A578` |
-| Accent Color      | ![#00FF00](https://via.placeholder.com/10/00FF00?text=+) `#00FF00` |
+| Primary Color     | Shade Of Orange |
+| Secondary Color   | White |
+| Accent Color      | Orange |
 
 ## Contributing
 
