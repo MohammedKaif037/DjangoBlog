@@ -108,25 +108,22 @@ If you have any feedback or suggestions for improvement, please open an issue on
 ## Screenshots
 
 ### Screenshot 1 - HOME
-![Screenshot 1](https://github.com/MohammedKaif037/DjangoBlog/blob/main/Screenshots/bloghome.png)
+![Screenshot 1](https://github.com/MohammedKaif037/DjangoBlog/blob/main/Screenshots/bhome.png)
 
 ### Screenshot 2 - BlogPost
-![Screenshot 2](https://github.com/MohammedKaif037/DjangoBlog/blob/main/Screenshots/Togit.png)
+![Screenshot 2](https://github.com/MohammedKaif037/DjangoBlog/blob/main/Screenshots/bpost.png)
 
 ### Screenshot 3 - Category
-![Screenshot 3](https://github.com/MohammedKaif037/DjangoBlog/blob/main/Screenshots/category.png)
+![Screenshot 3](https://github.com/MohammedKaif037/DjangoBlog/blob/main/Screenshots/bcategory.png)
 
 ### Screenshot 4 - Tag
-![Screenshot 4](https://github.com/MohammedKaif037/DjangoBlog/blob/main/Screenshots/tag.png)
+![Screenshot 4](https://github.com/MohammedKaif037/DjangoBlog/blob/main/Screenshots/btag.png)
 
 ### Screenshot 5 - Contact
-![Screenshot 5](https://github.com/MohammedKaif037/DjangoBlog/blob/main/Screenshots/contactblog.png)
-
-### Screenshot 6 - Updated HomePage
-![Screenshot 5](https://github.com/MohammedKaif037/DjangoBlog/blob/main/Screenshots/bh.png)
+![Screenshot 5](https://github.com/MohammedKaif037/DjangoBlog/blob/main/Screenshots/bcontact.png)
 
 ### Screenshot 6 - Create Post
-![Screenshot 5](https://github.com/MohammedKaif037/DjangoBlog/blob/main/Screenshots/bh2.png)
+![Screenshot 5](https://github.com/MohammedKaif037/DjangoBlog/blob/main/Screenshots/bcreate.png)
 
 
 ## Style Guide
