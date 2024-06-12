@@ -13,43 +13,160 @@
     <!-- Custom CSS -->
     <link rel="stylesheet" href="{% static 'djangoapp/style.css' %}">
     <style>
-        code {
-        color: #00a545; /* Set text color of code tags to white */
-        }
-        body {
-            color: #121212; /* Almost-black text */
-            background-color: #FFFFFF; /* Pure white background */
-        }
-        .navbar, .footer {
-            background-color: #FF6347; /* Tomato red for navbar and footer */
-        }
-        .navbar-brand, .nav-link, .footer .text-muted, .footer .list-inline-item a {
-            color: #FFFFFF; /* White text for navbar and footer links */
-        }
-        .header h1, .header p, .btn-primary {
-            color: #FF6347; /* Tomato red for headers and buttons */
-        }
-        .featured-post {
-            height: 100%;
-            display: flex;
-            flex-direction: column;
-            border: 1px solid #FF6347; /* Thin orange border */
-            padding: 10px; /* Add padding inside the border */
-            border-radius: 5px; /* Rounded corners for better aesthetics */
-            margin-bottom: 20px; /* Space between featured posts */
+    body {
+   background-repeat: no-repeat;
+  background-color: #f5f5f5;
+  color: #333;
+  font-family: 'Roboto', sans-serif;
+}
+
+    h1, h2, h3, h4, h5, h6 {
+      color: #ff6200;
+      font-weight: 700;
+    }
+
+    .blog-post {
+      background-color: #fff;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      padding: 2rem;
+    }
+
+    .post-summary, .subheading-content, .code-block {
+      border-left: 5px solid #ff6200;
+      padding-left: 1rem;
+    }
+
+    .code-block pre {
+      background-color: #f5f5f5;
+      padding: 1rem;
+      border-radius: 4px;
+    }
+
+    .sidebar {
+      background-color: #fff;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      padding: 2rem;
+    }
+
+    .sidebar h3 {
+      color: #ff6200;
+      border-bottom: 1px solid #ff6200;
+      padding-bottom: 0.5rem;
+    }
+
+    .sidebar ul li a {
+      color: #333;
+      transition: color 0.2s ease-in-out;
+    }
+
+    .sidebar ul li a:hover {
+      color: #ff6200;
+    }
+
+    .tags a {
+      background-color: #ff6200;
+      color: #fff;
+      margin-right: 0.5rem;
+      margin-bottom: 0.5rem;
+      display: inline-block;
+      padding: 0.25rem 0.5rem;
+      border-radius: 4px;
+      transition: background-color 0.2s ease-in-out;
+    }
+
+    .tags a:hover {
+      background-color: #e65c00;
+    }
+
+    .list-inline-item a {
+      color: #333;
+      transition: color 0.2s ease-in-out;
+    }
+
+    .list-inline-item a:hover {
+      color: #ff6200;
+    }
+    .blog-post, .sidebar {
+  background: linear-gradient(to bottom, #fff 0%, #f9f9f9 100%);
+    }
+    .list-inline-item a {
+    color: #333;
+    transition: color 0.2s ease-in-out, transform 0.2s ease-in-out;
+    }
+
+    .list-inline-item a:hover {
+    color: #ff6200;
+    transform: scale(1.1);
+    }
+        
+        .create-post-container {
+            text-align: center;
+            margin-top: 10px;
         }
         
-        .navbar-toggler-icon {
-    background-image: url('data:image/svg+xml;charset=UTF8,%3Csvg viewBox="0 0 30 30" xmlns="http://www.w3.org/2000/svg"%3E%3Cpath stroke="rgba%28255, 255, 255, 1%29" stroke-width="2" stroke-linecap="round" stroke-miterlimit="10" d="M4 7h22M4 15h22M4 23h22"/%3E%3C/svg%3E');
-}
-.post-summary {
-    background-color: #f9f9f9; /* Light grey background */
-    border-left: 4px solid #007BFF; /* Blue border on the left */
-    padding: 10px 15px;
-    margin-bottom: 20px;
-    font-style: italic; /* Optional: to make it stand out */
-}
-    </style>
+        .create-post-link {
+            color: #1E90FF;
+            font-size: 1.5em;
+            text-decoration: none;
+            position: relative;
+            display: inline-flex;
+            align-items: center;
+        }
+        
+        .create-post-link .icon {
+            background-color: #1E90FF;
+            color: white;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 10px;
+            transition: transform 0.3s, background-color 0.3s;
+            position: relative;
+        }
+        
+        .create-post-link:hover .icon {
+            transform: rotate(90deg);
+            background-color:  #006400; 
+        }
+        
+        .create-post-link .icon::after {
+            position: absolute;
+            bottom: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(0, 0, 0, 0.8);
+            color: #0000FF;
+            padding: 5px 10px;
+            border-radius: 5px;
+            opacity: 0;
+            transition: opacity 0.3s;
+            pointer-events: none;
+            margin-bottom: 10px;
+        }
+        
+        .create-post-link:hover .icon::after {
+            opacity: 1;
+        }
+        
+        a:hover{
+            color: #b2b2b2;
+         }
+        
+        .btn:hover{
+            background-color: #0000FF;
+            color: #ffffff;
+            text-decoration: wavy;
+        }
+        
+        #create-post:hover{
+            background-color: none;
+        }
+        
+        
+        </style>
     <!-- FontAwesome CDN -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 
@@ -92,8 +209,8 @@
         <div class="container h-100">
             <div class="row h-100 align-items-center">
                 <div class="col-lg-12">
-                    <h1 class="display-4 mt-5 mb-2">Welcome to My Django Blog</h1>
-                    <p class="lead mb-5">Insights, stories and ideas from the world of tech.</p>
+                    <h1 class="display-4 mt-5 mb-2">CreativeBloom Blog</h1>
+                    <p class="lead mb-5">Insights, stories and ideas from the world.</p>
                 </div>
             </div>
         </div>

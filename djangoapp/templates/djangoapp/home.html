@@ -2,76 +2,68 @@
 
 {% block content %}
 <style>
-.create-post-container {
-    text-align: center;
-    margin-top: 10px;
-}
+    .create-post-container {
+        text-align: center;
+        margin-top: 20px;
+    }
 
-.create-post-link {
-    color: #ff5050;
-    font-size: 1.5em;
-    text-decoration: none;
-    position: relative;
-    display: inline-flex;
-    align-items: center;
-}
+    .create-post-link {
+        display: inline-block;
+        padding: 12px 24px;
+        background-color: #ff5500;
+        color: #fff;
+        text-decoration: none;
+        font-size: 18px;
+        font-weight: bold;
+        border-radius: 4px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        transition: all 0.3s ease;
+        position: relative;
+        overflow: hidden;
+    }
 
-.create-post-link .icon {
-    background-color: #ff5050;
-    color: white;
-    border-radius: 50%;
-    width: 40px;
-    height: 40px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-right: 10px;
-    transition: transform 0.3s, background-color 0.3s;
-    position: relative;
-    text-decoration: none;
-}
+    .create-post-link:before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(90deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.3));
+        transition: all 0.3s ease;
+    }
 
-.create-post-link:hover .icon {
-    transform: rotate(90deg);
-    background-color:  #d9534f; text-decoration: none;
-}
+    .create-post-link:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
+    }
 
-.create-post-link .icon::after {
-    position: absolute;
-    bottom: 100%;
-    left: 50%;
-    transform: translateX(-50%);
-    white-space: nowrap;
-    background: rgba(0, 0, 0, 0.8);
-    color: #f67272;
-    padding: 5px 10px;
-    border-radius: 5px;
-    opacity: 0;
-    transition: opacity 0.3s;
-    pointer-events: none;
-    margin-bottom: 10px;
-    text-decoration: none;
-}
+    .create-post-link:hover:before {
+        left: 100%;
+    }
 
-.create-post-link:hover .icon::after {
-    opacity: 1;
-}
-a:hover{
-    color: #f17676;
- }
-.btn:hover{
-    background-color: #f17676;
-    color: #ffffff;
-    text-decoration: wavy;
+    .create-post-link .icon {
+        display: inline-block;
+        margin-right: 8px;
+        font-size: 24px;
+        vertical-align: middle;
+        animation: pulse 1.5s infinite;
+    }
 
-}
-#create-post:hover{
-    background-color:none;
-
-}
-
-
+    @keyframes pulse {
+        0% {
+            transform: scale(1);
+        }
+        50% {
+            transform: scale(1.2);
+        }
+        100% {
+            transform: scale(1);
+        }
+    }
 </style>
+
+ 
 {% if is_authenticated %}
 <div style="text-align: center;">
     <h2 style="color: #eb0d0d; display: inline-block;">You are logged in as </h2>
@@ -80,7 +72,7 @@ a:hover{
 {% endif %}
 {% if user.is_authenticated %}
 <div class="create-post-container">
-    <a  href="{% url 'create-post' %}" class="create-post-link">
+    <a href="{% url 'create-post' %}" class="create-post-link">
         <span class="icon">+</span> Create Post
     </a>
 </div>
@@ -233,4 +225,15 @@ a:hover{
         </div>
     </div>
 </div>
+<script>
+    document.querySelector('.create-post-link').addEventListener('mouseover', function() {
+    this.style.color = 'hsl(160, 50%, 20%)'; // Intense color on mouseover
+    this.querySelector('.icon').style.color = 'white'; // Icon turns white
+});
+
+document.querySelector('.create-post-link').addEventListener('mouseout', function() {
+    this.style.color = 'hsl(160, 50%, 60%)'; // Back to normal color
+    this.querySelector('.icon').style.color = 'hsl(160, 50%, 80%)'; // Icon back to normal
+});
+</script>
 {% endblock %}
