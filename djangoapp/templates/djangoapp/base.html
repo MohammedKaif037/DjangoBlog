@@ -20,6 +20,57 @@
   font-family: 'Roboto', sans-serif;
 }
 
+/* General Styles */
+body {
+    font-family: 'Arial', sans-serif;
+}
+
+/* Navbar */
+.colorful-navbar {
+    background: linear-gradient(to right, #ff7e5f, #feb47b);
+    padding: 10px 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.colorful-brand {
+    font-size: 1.5em;
+    color: #fff;
+    font-weight: bold;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.colorful-toggler {
+    border: none;
+}
+
+.colorful-toggler-icon {
+    background-image: url('data:image/svg+xml;utf8,<svg viewBox="0 0 30 30" xmlns="http://www.w3.org/2000/svg"><path d="M4 7h22M4 15h22M4 23h22" stroke="rgba(255,255,255,0.5)" stroke-width="2"/></svg>');
+}
+
+/* Navbar Links */
+.colorful-nav {
+    font-size: 1.1em;
+}
+
+.colorful-link {
+    color: #fff;
+    transition: color 0.3s ease;
+    padding: 5px 15px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.colorful-link:hover, .colorful-link:focus {
+    color: #ffeb3b;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 5px;
+}
+
+/* Active Link */
+.nav-item.active .colorful-link {
+    color: #ffeb3b;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 5px;
+}
     h1, h2, h3, h4, h5, h6 {
       color: #ff6200;
       font-weight: 700;
@@ -106,39 +157,39 @@
 
 </head>
 <body>
-    <!-- Navigation Bar -->
-    <nav class="navbar navbar-expand-lg">
-        <div class="container">
-            <a class="navbar-brand" href="{% url 'home' %}">My Blog</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
-                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon" ></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ml-auto">
-                    <li class="nav-item active">
-                        <a class="nav-link" href="{% url 'home' %}">Home <span class="sr-only">(current)</span></a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{% url 'about' %}">About</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{% url 'contact' %}">Contact</a>
-                    </li>
-                    {% if user.is_authenticated %}
-                    <li class="nav-item">
-                        <a class="nav-link" href="{% url 'logout' %}">Logout</a>
-                    </li>
-                    {% else %}
-                    <li class="nav-item">
-                        <a class="nav-link" href="{% url 'login' %}">Login</a>
-                    </li>
-                    {% endif %}
-                </ul>
-            </div>
+   <!-- Navigation Bar -->
+<nav class="navbar navbar-expand-lg colorful-navbar">
+    <div class="container">
+        <a class="navbar-brand colorful-brand" href="{% url 'home' %}">My Blog</a>
+        <button class="navbar-toggler colorful-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon colorful-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto colorful-nav">
+                <li class="nav-item active">
+                    <a class="nav-link colorful-link" href="{% url 'home' %}">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link colorful-link" href="{% url 'about' %}">About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link colorful-link" href="{% url 'contact' %}">Contact</a>
+                </li>
+                {% if user.is_authenticated %}
+                <li class="nav-item">
+                    <a class="nav-link colorful-link" href="{% url 'logout' %}">Logout</a>
+                </li>
+                {% else %}
+                <li class="nav-item">
+                    <a class="nav-link colorful-link" href="{% url 'login' %}">Login</a>
+                </li>
+                {% endif %}
+            </ul>
         </div>
-    </nav>
-    <!-- Header Section -->
+    </div>
+</nav>
+ <!-- Header Section -->
     <header class="header py-5 mb-5">
         <div class="container h-100">
             <div class="row h-100 align-items-center">
