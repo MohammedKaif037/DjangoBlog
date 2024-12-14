@@ -1,8 +1,8 @@
-name: Daily Commit
+name: Mohammed Kaif
 
 on:
   schedule:
-    - cron: '0 0 * * *'  # This runs the workflow every day at midnight
+    - cron: '0 0 * * *'  # Every day at midnight UTC to runs every 7-8 min set cron to '*/1 * * * *'
 
 jobs:
   commit:
@@ -11,16 +11,27 @@ jobs:
     steps:
     - name: Checkout repository
       uses: actions/checkout@v2
+      with:
+        ref: main 
 
-    - name: Set up Git
+    - name: Create file and commit
       run: |
-        git config --global user.name 'GitHub Actions'
-        git config --global user.email 'actions@github.com'
-
-    - name: Make a commit
-      run: |
-        git add .
-        git commit -m "Refactoring/Renaming"
-        git push origin main
+        FILE="commit_number.md"
+        if [ ! -f "$FILE" ]; then
+          echo "Hello, my name is Mohammed Kaif" > "$FILE"
+          echo "commit number: 1" >> "$FILE"
+        else
+          CURRENT_COUNT=$(grep -oP 'commit number: \K\d+' "$FILE")
+          if [ -z "$CURRENT_COUNT" ]; then
+            CURRENT_COUNT=0
+          fi
+          NEXT_COUNT=$((CURRENT_COUNT + 1))
+          sed -i "/commit number: /c\commit number: $NEXT_COUNT" "$FILE"
+        fi
+        git config --global user.name "MohammedKaif037"
+        git config --global user.email "kaifmohammed037@gmail.com"
+        git add "$FILE"
+        git commit -m "Hello, my name is Mohammed Kaif nice to meet you"
+        git push https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/MohammedKaif037/DjangoBlog.git
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
